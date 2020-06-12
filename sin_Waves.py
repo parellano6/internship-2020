@@ -15,7 +15,7 @@ time = np.arange(0, .01, 0.000001);
 # Time Delay
 timeDelay = 0
 
-# Frequencies
+# Frequencies // can change values according to what frequencies want to see
 freqOne = 400
 freqTwo = 300
 
