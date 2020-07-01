@@ -34,7 +34,7 @@ while select != 0 and select != 1:
 
 # Time Delay
 if select == 1:
-    print ("\nPlease enter a value for time delay (enter a negative number for a past wave and a positive for a future wave).")
+    print ("\nPlease enter a value for time delay (enter a negative number for a delay and a positive for an advance).")
     timeShift = float(input())
     # New wave
     sinTwo = amp * np.sin(2 * np.pi * (time - timeShift) * frequency)
@@ -45,7 +45,7 @@ if select == 0:
     phaseShift = float(input())
     phaseShift = phaseShift * np.pi / 180
     # New wave
-    sinTwo = amp * np.sin(2 * np.pi * (time + phaseShift) * frequency)
+    sinTwo = amp * np.sin(2 * np.pi * time * frequency + phaseShift)
 
 # Sine Waves
 sinOne = amp * np.sin(2 * np.pi * time * frequency)
@@ -70,6 +70,8 @@ plt.legend(handles = [sinOnePlot, sinTwoPlot],
            labels = ['Original Wave' % sinOne, 'Shifted Wave' % sinTwo])
 #plt.legend(loc = 'best')
 
+# Plot Details
+#fig, ax = plt.subplots()
 
 # Display the waves
 plt.show()
